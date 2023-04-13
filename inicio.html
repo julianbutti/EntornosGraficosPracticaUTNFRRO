@@ -2,11 +2,11 @@
 
 <head>
     <title>Titulo de la web</title>
-
+    <link rel="stylesheet" href="css/mi_estilo.css" />
 </head>
 
 <body>
-    <div id="id2" class="redondeado m2">
+    <div id="id2" class="redondeado m2" style="background-color: aqua;border-radius: 40%;">
         <h1>Titulo principal</h1>
         <p class="principal"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quod quaerat a nostrum veritatis libero tempore asperiores temporibus! Mollitia voluptatum voluptatem facere nobis error dolor quos quia illo laboriosam harum. </p>
         <h2>Titulo secundario</h2>
@@ -17,11 +17,62 @@
             </a>
         </p>
         <br />
-        <img alt="" tabindex="" src="" />
-        <form method="" action="proceso.php" id="" class="">
-            Nombre:<input type="text" required name="nombre" />
-            <input type="submit" value="Enviar" />
-        </form>
+        <img alt="" tabindex="" src="https://keepcoding.io/wp-content/uploads/2022/06/content-box.jpg" />
+        <div style="border: 1px solid black;margin:20px;padding:50px;">
+            <!--
+                GET
+                /inicio.html?nombre=julian&apellido=butti&email=asd%40asd.com&edad=3&disponibilidad=1&acepta=siAcepta&tarde=si#id2
+                
+                POST
+                /inicio.html
+            -->
+            <form method="POST" action="">
+                Nombre: <input type="text" required name="nombre" placeholder="Ingrese su nombre" />
+                <br /> Apellido: <input type="text" required name="apellido" />
+                <br /> Email: <input type="email" required name="email" value="jbutti@frro.utn.edu.ar" />
+                <br /> Edad: <input type="number" min="0" max="10" required name="edad" />
+                <br /> Disponible por la mañana:
+                <select name="disponibilidad">
+                    <option>Elija una opción</option>
+                    <option value="1">Si</option>
+                    <option value="2">No</option>
+                </select>
+                <br />
+                <input type="checkbox" name="acepta" value="siAcepta" /> Acepto los términos y condiciones
+
+                <br /> Disponible por la tarde:
+                <input type="radio" name="tarde" value="si"> SI
+                <input type="radio" name="tarde" value="no"> NO
+                <br /> Comentario:
+                <textarea name="comentarios">
+
+                </textarea>
+                <br />
+                <input type="submit" value="Enviar" />
+                <input type="reset" value="Limpiar formulario" />
+            </form>
+
+            <!--
+                GET
+                /inicio.html?b=campodeBusqueda
+                /resultados.php?p=2
+                
+            -->
+            <form method="GET" action="">
+                Buscar: <input type="text" required name="b" />
+                <input type="submit" value="Buscar" />
+            </form>
+
+            <form method="POST" action="eliminar.php">
+                <input type="hidden" name="idAEliminar" value="1" />
+                <input type="submit" value="Eliminar elemento 1" />
+            </form>
+            <form method="POST" action="eliminar.php">
+                <input type="hidden" name="idAEliminar" value="2" />
+                <input type="submit" value="Eliminar elemento 2" />
+            </form>
+        </div>
+
     </div>
     <style>
         .principal {
@@ -31,11 +82,36 @@
         #textox {
             background-color: blue;
         }
-        
+    </style>
+    <br />
+    <hr />
+    <p></p>
+    <style>
         a:hover {
             color: green;
         }
     </style>
+    <div class="noticia">
+        <h2>Titular 1</h2>
+        <span>Contenido de la noticia 1</span>
+    </div>
+    <div class="noticia">
+        <h2>Titular 2</h2>
+        <span>Contenido de la noticia 2</span>
+    </div>
+    <div class="noticia">
+        <h2>Titular 3</h2>
+        <span>Contenido de la noticia 3 </span>
+    </div>
+    <div class="noticia">
+        <h2>Titular 4</h2>
+        <span>Contenido de la noticia 4</span>
+    </div>
+    <div class="noticia">
+        <h2>Titular 5</h2>
+        <span>Contenido de la noticia 5</span>
+    </div>
+
 </body>
 
 </html>

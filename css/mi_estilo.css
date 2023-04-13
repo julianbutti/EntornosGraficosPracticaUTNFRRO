@@ -1,0 +1,59 @@
+.redondeado {
+    border: 1px;
+    border-radius: 20%;
+}
+
+#id2 {
+    margin: 5px;
+}
+
+p {
+    padding: 0;
+    border: solid 2px;
+    width: auto;
+    min-height: 10px;
+    max-height: 200px;
+    padding: 5px;
+    margin: 5px;
+    padding-left: 40px;
+    padding-bottom: 1px;
+    margin-right: 50px;
+}
+
+a {
+    color: green;
+    font-size: 24px;
+    border: solid 2px red;
+    margin: 10px 50px 1px 20px;
+    margin-top: 10px;
+    margin-right: 50px;
+    margin-bottom: 1px;
+    margin-left: 20px;
+    padding: 20px 50px;
+}
+
+.noticia {
+    width: 24%;
+    float: left;
+    border: solid 1px black;
+    background-color: aliceblue;
+    margin: 1px;
+    padding: 5px;
+}
+
+h2 {
+    color: black;
+}
+
+.noticia h2 {
+    color: blue;
+}
+
+.noticia span {
+    color: green;
+    font-size: small;
+}
+
+.noticia:hover {
+    background-color: aquamarine;
+}
