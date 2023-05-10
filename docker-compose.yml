@@ -1,0 +1,16 @@
+version: "3"
+ 
+services:
+    php:
+        image: chialab/php:7.3-apache
+        # restart: always
+        container_name: apache-php7.3-api
+        volumes:
+            # Montamos nuestra web desde fuera en el directorio web del contenedor
+            - ./:/var/www/html
+        expose:
+            - 8080
+        ports:
+            - 8081:80
+        # command: service apache2 start
+        # command: ["service", "apache2", "start"]
