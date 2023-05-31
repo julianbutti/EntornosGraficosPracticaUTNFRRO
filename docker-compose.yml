@@ -1,6 +1,20 @@
 version: "3"
  
 services:
+    mysql:
+        platform: linux/x86_64
+        image: mysql:5.7
+        # restart: always
+        environment:
+            - MYSQL_DATABASE=test
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_USER=test
+            - MYSQL_PASSWORD=test
+        volumes:
+        # Montamos un volumen para MySQL para no perder los datos de bd
+            - ./volumenes/mysql:/var/lib/mysql
+        expose:
+            - 3306
     php:
         image: chialab/php:7.3-apache
         # restart: always
@@ -12,5 +26,21 @@ services:
             - 8080
         ports:
             - 8081:80
-        # command: service apache2 start
-        # command: ["service", "apache2", "start"]
+        links: 
+            - mysql
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        # restart: always
+        # container_name: phpmyadmin
+        ports: 
+            - "8080:80"
+        volumes:
+            - ./config/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+        environment:
+            PMA_HOSTS: mysql
+            UPLOAD_LIMIT: 100M
+        container_name: phpmyadmin
+        depends_on:
+            - mysql
+        links:
+            - mysql
