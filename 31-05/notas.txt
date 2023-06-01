@@ -1,0 +1,18 @@
+
+- Bases de datos
+    (Relacionales / No relacionales) [Mysql, posgress / MongoDB, Cassandra, Firebase]
+
+    Motor de bd
+        Servidor + Puerto [localhost:3306]
+
+    Ejemplo de tablas
+        Usuarios (legajo, nombre, pais)
+            Normalizamos -> Usuarios (legajo, nombre, pais_id) |  Paises (id, nombre)
+
+    Xampp
+        phpMyAdmin ( Interfaz visual para gestionar motor de bd Mysql ) [ Tableplus, workbench ]
+
+    Motor Mysql -> Bases de Datos -> Tablas -> Registros
+
+    
+
