@@ -57,3 +57,46 @@ if(!empty($_SESSION['mensaje'])){
         }
     ?>
 </div>
+
+<!-- Mostrar listado -->
+<div id="listado" class="">
+    <h3>Ciudades</h3>
+    <?php
+        if(!empty($listado)){
+            ?>
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td>Nombre</td>
+                    <td>Eliminar</td>
+                    <td>Editar</td>
+                </tr>
+                <?php
+                while($ciudad = mysqli_fetch_array($listado)){
+                    ?>
+                    <tr>
+                        <td><?= $ciudad["id"] ?></td>
+                        <td><?= $ciudad["nombre"] ?></td>
+                        <td><a href="ciudades.php?eliminarid=<?= $ciudad['id'] ?>">X - Eliminar</a></td>
+                        <td><a href="ciudades.php?editarid= <?= $ciudad['id'] ?>">Editar</a></td>
+                    </tr>
+                    <?php
+                }
+                ?>
+            </table>
+            <?php
+        }else{
+            echo 'No hay ciudades cargadas...';
+        }
+
+        /*
+        
+            <?=
+            
+            equivalente
+
+            <?php echo
+
+        */
+    ?>
+</div>
