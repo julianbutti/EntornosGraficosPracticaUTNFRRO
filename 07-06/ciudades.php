@@ -6,6 +6,30 @@ if(!empty($_SESSION['mensaje'])){
     echo '<strong>'.$_SESSION['mensaje'].'</strong><br />';
     unset($_SESSION['mensaje']);
 }
+
+$_SESSION['fecha']['registro'][] = date('Y-m-d H:i:s');
+$_SESSION['fecha']['registro'][] = date('Y-m-d H:i:s') . rand();
+$_SESSION['fecha']['registro'][] = date('Y-m-d H:i:s') . rand();
+$_SESSION['fecha']['registro'][] = date('Y-m-d H:i:s') . rand();
+$_SESSION['fecha']['test'][] = date('Y-m-d H:i:s') . rand();
+/*
+Array ( 'fecha' =>  
+        Array(
+            'registro' =>
+                Array ( 
+                    0 => '2023-06-21 21:23:23',  
+                    1 => '2023-06-21 21:23:23 324234',
+                    2 => '2023-06-21 21:23:23 345345',
+                    3 => '2023-06-21 21:23:23 534634'
+                )
+            ,
+            'test' =>
+                Array ( 
+                    0 => '2023-06-21 21:23:23 345678'
+                )
+        )
+    )
+*/
 ?>
 <!-- Formulario para editar Ciudad -->
 <?php if(!empty($_GET['editarid'])): ?>
