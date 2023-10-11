@@ -1,16 +1,6 @@
 <?php
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', 'password');
-define('DB_NAME', 'prueba');
-
-function consultaSql($query){
-    $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or die("Error al conectarse");
-    $resultados = mysqli_query($connection,$query);
-    mysqli_close($connection);
-    return $resultados;
-}
+include_once "funciones.php";
 
 if(!empty($_POST) AND !empty($_POST['nombre'])){
     //Viene un registro desde el formulario
