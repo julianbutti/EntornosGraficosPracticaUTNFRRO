@@ -16,7 +16,9 @@ if(!empty($resultado)){
             <th>-</th>
         </tr>
         <?php
-            foreach($resultado as $cliente){
+            $elementos = mysqli_fetch_assoc($resultado);
+
+            foreach($elementos as $cliente){
                 //echo $cliente["nombre"];
                 echo "<tr>";
                     echo "<td>" . $cliente["nombre"] . "</td>";
