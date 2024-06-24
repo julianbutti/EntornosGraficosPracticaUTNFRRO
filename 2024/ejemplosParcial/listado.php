@@ -7,6 +7,12 @@ $query = "SELECT * FROM clientes ORDER BY nombre ASC";
 $resultado = consultaSql($query);
 if(!empty($resultado)){
     ?>
+    <!DOCTYPE html>
+<head>
+    BOOTSTRAP
+</head>
+<body>
+
     <table>
         <tr>
             <th>Nombre</th>
