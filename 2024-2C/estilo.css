@@ -1,0 +1,51 @@
+div{
+    color:black;
+    background-color: #FAFAFA;
+}
+
+#contenedor1 {
+    background-color: aliceblue;
+}
+
+.tipo1,.tipo2{
+    margin: 10px;
+}
+
+a , p , h3 {
+    padding-bottom: 5px;
+}
+/*
+Rojos todos los enlaces que están adentro de un Párrafo 
+*/
+p a {
+    color:red;
+}
+
+a:hover{
+    color: green;
+}
+
+/*
+
+CSS BOX MODEL
+Diagrama de cajas de CSS
+
+*/
+
+SELECTOR {
+    padding:10px;
+    padding-top:20px;
+
+    padding: 10px 20px 10px 10px;
+    padding: 10px 20px;
+
+    margin-bottom: 20px;
+    margin-left: 10px;
+
+    width: 50%;
+    width: 400px;
+    /*height: 100px;*/
+
+    min-height: 50px;
+    
+}
