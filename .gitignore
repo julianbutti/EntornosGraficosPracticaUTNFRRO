@@ -3,6 +3,7 @@ tmp/*
 *.zip
 *.tmp
 volumenes/*
+*/volumenes/*
 2023/volumenes/*
 *.htmll
 zzzz*
