@@ -1,0 +1,51 @@
+*{
+    margin:0;padding:0;
+}
+body{
+
+}
+.rojo {
+    margin:20px;
+}
+
+.rojo {
+    margin:30px;
+}
+
+#imagen1{
+    width: 50%;
+}
+
+@media (max-width: 400px) {
+    #imagen1{
+        width: 100%;
+    }    
+}
+  
+p {
+    color:red;
+}
+
+a, h2, strong {
+    margin:1px;
+}
+
+a {
+    margin:1px;
+}
+
+h2 {
+    margin:1px;
+}
+
+div .rojo .redondeado{
+
+}
+
+#bloque3 a .rojo{
+    color: red;
+}
+
+a:hover{
+    color: green;
+}
