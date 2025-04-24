@@ -1,0 +1,46 @@
+<html>
+    <div class="base">
+        <div class="principal"></div>
+        <div class="secundario"></div>    
+        <div class="principal"></div>
+        <div class="secundario"></div>    
+        <div class="principal"></div>
+        <div class="secundario"></div>
+        <div class="principal"></div>
+        <div class="secundario"></div>    
+        <div class="principal"></div>
+        <div class="secundario"></div>
+    </div>
+    <h2>Titular secundario</h2>
+    
+    <style>
+        .base{
+            width: 100%;
+            background-color: lightgray;
+            padding: 40px;
+            min-height: 200px;
+        }
+        .principal{
+            background-color: aqua;
+            min-height: 50px;
+            width: 40%;
+            float: left;
+            margin: 5px;
+        }
+
+        .secundario{
+            background-color: lightcoral;
+            min-height: 50px;
+            width: 40%;
+            float: left;
+            margin: 5px;
+        }
+
+
+        @media (max-width: 500px) {
+            .secundario, .principal{
+                width: 90%;
+            }
+        }
+    </style>
+</html>
