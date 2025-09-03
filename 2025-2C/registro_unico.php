@@ -19,6 +19,7 @@ if(!empty($_POST)){
         echo "ERROR: No están completos los campos...";
     }
 }
+
 ?>
 <center>
 
