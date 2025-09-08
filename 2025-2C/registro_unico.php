@@ -1,5 +1,14 @@
 <?php
+
 include_once "funciones.php";
+
+if(empty($_SESSION["usuario_actual"]) OR $_SESSION["rol"] != "admin") {
+    // Redirigir a la página de inicio de sesión
+    header("Location: ejemplo-8-9.php");
+    exit();
+}
+
+
 
 if(!empty($_POST)){
 
@@ -19,6 +28,7 @@ if(!empty($_POST)){
         echo "ERROR: No están completos los campos...";
     }
 }
+
 
 ?>
 <center>
