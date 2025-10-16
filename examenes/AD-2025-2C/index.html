@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Práctico - Entornos Gráficos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .metadata {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .metadata-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .metadata-item strong {
+            color: #667eea;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .alert strong {
+            color: #856404;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #444;
+        }
+        
+        .requisito {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .requisito h3 {
+            margin-top: 0;
+        }
+        
+        .archivos-box {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .archivos-box ul {
+            margin-top: 10px;
+        }
+        
+        .form-section {
+            background: #f0f0f0;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 8px;
+            border: 2px solid #667eea;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="file"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .file-input-wrapper {
+            margin-bottom: 10px;
+        }
+        
+        .required {
+            color: #dc3545;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        button:hover {
+            background: #5568d3;
+        }
+        
+        .btn-entrega {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn-entrega:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .form-section {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Examen Práctico: Sistema de Login con Favoritos</h1>
+        
+        <div class="metadata">
+            <div class="metadata-item">
+                <strong>⏱️ Tiempo:</strong> <span>40 minutos</span>
+            </div>
+            <div class="metadata-item">
+                <strong>📝 Materia:</strong> <span>Entornos Gráficos</span>
+            </div>
+        </div>
+
+        <h2>Consigna</h2>
+        <p>Desarrollar un sistema simple de autenticación con gestión de productos favoritos.</p>
+
+        <div class="alert">
+            <strong>⚠️ Importante:</strong> Asumir que existe una base de datos con las siguientes tablas:
+            <ul style="margin-top: 10px;">
+                <li><code>usuarios</code> (id, username, password)</li>
+                <li><code>productos</code> (id, nombre, precio)</li>
+            </ul>
+        </div>
+
+        <h2>Requisitos del Sistema</h2>
+
+        <div class="requisito">
+            <h3>1. Página de Login (login.php)</h3>
+            <ul>
+                <li>Formulario con campos username y password</li>
+                <li>Validar credenciales contra la tabla <code>usuarios</code> mediante consulta SQL</li>
+                <li>Si existe una cookie con el último usuario, pre-completar el campo username</li>
+                <li>Al iniciar sesión correctamente:
+                    <ul>
+                        <li>Guardar el id del usuario en una variable de sesión</li>
+                        <li>Crear una cookie que recuerde el username por 7 días</li>
+                        <li>Redirigir a la página de productos</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="requisito">
+            <h3>2. Página de Productos (productos.php)</h3>
+            <ul>
+                <li>Verificar que exista sesión activa, sino redirigir a login</li>
+                <li>Realizar consulta SQL para mostrar todos los productos en una tabla HTML</li>
+                <li>Incluir botón/link para cerrar sesión</li>
+            </ul>
+        </div>
+
+        <div class="requisito">
+            <h3>3. Cerrar Sesión (logout.php)</h3>
+            <ul>
+                <li>Destruir la sesión activa</li>
+                <li>Redirigir a login</li>
+            </ul>
+        </div>
+
+        <div class="requisito">
+            <h3>4. Estilos (CSS)</h3>
+            <ul>
+                <li>Aplicar estilos básicos al formulario de login</li>
+                <li>Estilizar la tabla de productos (colores, bordes, espaciado)</li>
+            </ul>
+        </div>
+
+        <div class="archivos-box">
+            <strong>📁 Archivos a entregar:</strong>
+            <ul>
+                <li>login.php</li>
+                <li>productos.php</li>
+                <li>logout.php</li>
+                <li>styles.css</li>
+            </ul>
+        </div>
+
+        <div class="form-section">
+            <h2 style="margin-top: 0; color: #667eea;">📤 Entrega del Examen</h2>
+            <p style="margin-bottom: 20px;">Una vez finalizado el examen, deberás entregar tus archivos a través del siguiente formulario:</p>
+            
+            <div style="text-align: center; padding: 30px 0;">
+                <a href="https://forms.gle/eD9s9Hi3pVu3yNWi7" target="_blank" class="btn-entrega">
+                    Acceder al Formulario de Entrega
+                </a>
+            </div>
+
+            <div class="alert" style="background: #d1ecf1; border-left-color: #17a2b8;">
+                <strong>📋 Recuerda incluir en el formulario:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Nombre completo</li>
+                    <li>Número de legajo</li>
+                    <li>Correo electrónico</li>
+                    <li>Enlace a repositorio de github donde estén los 4 archivos solicitados: login.php, productos.php, logout.php y styles.css</li>
+                </ul>
+            </div>
+
+            <div class="alert" style="background: #fff3cd; border-left-color: #ffc107; margin-top: 20px;">
+                <strong>⚠️ Importante:</strong> Una vez entregado el examen, no se deben realizar modificaciones en los archivos del repositorio de GitHub. Cualquier cambio posterior a la entrega será considerado inválido.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
