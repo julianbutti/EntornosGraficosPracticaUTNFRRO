@@ -4,7 +4,7 @@ session_start();
 
 if(!empty($_POST["user"]) AND !empty($_POST["clave"])){
     //Consulta a la DB
-    if($_POST["user"] == "julian" AND $_POST["clave"] == "clave"){
+    if($_POST["user"] == "julian" AND md5($_POST["clave"]) == md5("clave")){
         $_SESSION["valido"] = true;
         setcookie("ultimo_login", date('Ymd-His'),0);
     }else{
