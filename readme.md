@@ -5,7 +5,6 @@ Antes de entregar, revisá **cada punto** de esta lista. Si algo no se cumple, e
 > Regla general: el corrector no conoce tu sistema, debes suponer que no va a leer tu código para entender cómo funciona y no va a instalar nada. Si algo no se puede probar en 5 minutos desde el navegador, no existe.
 
 ---
-
 ## 1. Despliegue y acceso
 
 - [ ] El sistema está subido a un hosting y es accesible desde el navegador con una URL pública.
